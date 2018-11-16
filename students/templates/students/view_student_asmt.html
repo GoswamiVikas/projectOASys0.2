@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+	<title>Assignments</title>
+	{% endblock %}
+</head>
+<body>
+
+<body>
+	{% block body %}
+	<div class="container">
+	  <h2> Assignments </h2>            
+	  <table class="table">
+	    <thead>
+	      <tr>
+	        <th>Subject</th>
+	        <th>Assignment No</th>
+	        <th>Due Date</th>
+	        <th><embed src="{{ asmt.asmt_file.url }}" type="application/pdf" height="700px" width="500"></th>
+	      </tr>
+	    </thead>
+	    {% for asmt in asmts.all %}
+	    <tbody>
+	      <tr>
+	        <td>{{ asmt.subject.name }}</td>
+	        <td>{{ asmt.asmt_no }}</td>
+	        <td>{{ asmt.due_datetime }}</td>
+	        <td>{}</td>
+	      </tr>
+	    <tbody>
+	    {% endfor %}
+	  </table>
+	</div>
+
+</body>
+</html>
+	{% endblock %}
+</body>
+</html>
